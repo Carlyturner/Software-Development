@@ -1,0 +1,67 @@
+
+{% load static %}
+
+<html> 
+
+
+     <head>
+
+        <link rel = "stylesheet" type="text/css" href="https://bootswatch.com/5/vapor/bootstrap.min.css"
+
+        <link rel = "stylesheet" type="text/css" href="{% static 'css/styles.css' %}"
+
+   
+     </head>
+
+    {% include 'navbar.html' %}
+
+    <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">Collapsed content</h5>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+
+    
+
+
+    <h2> This is our Home page!</h2>
+
+    <br> <br> <br> <br>
+
+    <a href="{% url 'my-login' %}"> Login </a>
+
+    <br> <br>
+
+    <a href="{% url 'register' %}"> Register a user </a>
+
+    <br> <br>
+
+    <a href="{% url 'create-task' %}"> Create a task </a>
+
+    <br> <br>
+
+    <a href="{% url 'view-task' %}"> View tasks </a>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

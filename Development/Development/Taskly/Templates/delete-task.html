@@ -1,0 +1,35 @@
+
+{% include 'navbar.html' %}
+
+<h2> CRUD - DELETE a tasks! </h2>
+
+<form method="POST" autocomplete="off">
+    
+    {% csrf_token %}
+
+    <p> Are you sure? </p>
+
+    <a href="{% url 'view-task' %}"> Go back </a>
+    
+    <input type="submit" value="Submit"/>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
