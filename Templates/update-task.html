@@ -1,0 +1,29 @@
+
+{% include 'navbar.html' %}
+
+<h2> CRUD - UPDATE a tasks! </h2>
+
+<form method="POST" autocomplete="off">
+    
+    {% csrf_token %}
+
+    {{form.as_p}}
+    
+    <input type="submit" value="Submit"/>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

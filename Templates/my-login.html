@@ -1,0 +1,26 @@
+{% include 'navbar.html' %}
+
+<h2> This is our login page!</h2>
+
+<form method="POST" autocomplete="off">
+    
+    {% csrf_token %}
+
+    {{form.as_p}}
+    
+    <input type="submit" value="Submit"/>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
