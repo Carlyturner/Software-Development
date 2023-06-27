@@ -1,0 +1,62 @@
+ 
+{% load static %}
+
+<html> 
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" contact="width-device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>Taskly | Dashboard</title>
+</head>
+
+<body>
+    {% include 'profile/base.html' %}
+
+    <div class="container bg shadow-md p-5 form-layout" style="margin-top:20px;">
+        <h3 class="text-center">Taskly</h3>
+        <hr>
+
+        {% if profile.profile_pic %}
+        <img style="width: 200px;" src="{{ profile.profile_pic.url }}" alt="Profile Picture">
+        {% endif %}
+
+        <br><br>
+
+        <p>Welcome to Taskly - Your personal task manager application!</p>
+
+        <br><br>
+
+        <a href="{% url 'profile-management' %}" style="color: black;">Profile management</a>
+    </div>
+
+    <br>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

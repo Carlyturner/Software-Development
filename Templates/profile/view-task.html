@@ -1,0 +1,39 @@
+{% load static %}
+
+<html> 
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <title> Taskly | My task </title>
+    </head>
+
+    {% include 'profile/base.html' %}
+
+    <br>
+
+    <h3 class="text-center">My tasks</h3>
+
+    <hr>
+
+    {% for tsk in task %}
+<div class="container bg shadow-md p-5 form-layout" style="margin-top:20px;">
+   <h3>  {{ tsk.title }} </h3>
+    <br>
+    {{ tsk.content }}
+
+    <br> <br>
+
+    <a class="btn btn-info" href="{% url 'update-task' pk=tsk.pk %}">Update task</a>
+
+    <br> <br>
+
+    <a class="btn btn-primary" href="{% url 'delete-task' pk=tsk.pk %}">Delete task</a>
+</div>
+{% endfor %}
+
+<br>
+</html>
+
+

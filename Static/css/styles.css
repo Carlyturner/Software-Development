@@ -1,0 +1,27 @@
+h2 {
+    color: rgb(243, 244, 248);
+  }
+  
+  .form-layout {
+    border-radius: 10px;
+    width: 500px;
+  }
+  
+  .container .task-title,
+  .container .task-content {
+    color: black;
+  }
+  
+  .container {
+    border: 1px solid rgb(32, 192, 220);
+    border-radius: 10px;
+    width: 500px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .message-text{
+
+    color: rgb(255, 255, 255);
+  }

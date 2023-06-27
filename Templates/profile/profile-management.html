@@ -1,0 +1,88 @@
+
+{% load static %}
+
+
+
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <title> Taskly | Profile management </title>
+        <style>
+            .submit-btn {
+                background-color: rgb(47, 180, 40);
+                color: black;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    {% include 'profile/base.html' %}
+
+    <br>
+
+    <h3 class="text-center">Update your profile</h3>
+
+    <hr>
+
+
+   
+
+    <div class="container text-white shadow-md p-5 form-layout" style="margin-top:20px;"> <!-- Added 'text-dark' class for contrasting text color -->
+        
+        <h3 class="text-white">Update your account details</h3>
+
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{user_form.as_p}}
+
+
+            <input class="btn btn-primary navbar-btn" type="submit" value="Update" class="submit-btn" />
+
+        </form>
+
+    </div>
+
+    <br>
+
+    <div class="container text-white shadow-md p-5 form-layout" style="margin-top:20px;"> <!-- Added 'text-dark' class for contrasting text color -->
+
+        <h3 class="text-white">Update your profile picture</h3>
+
+        <hr>
+    
+        <form method="POST" autocomplete="off" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+        
+
+            {{form_2}}
+
+            <br> <br>
+
+            <input class="btn btn-primary navbar-btn" type="submit" value="Update profile picture">
+
+    </div>
+
+
+
+    <div class="container text-white shadow-md p-5 form-layout" style="margin-top:20px;"> <!-- Added 'text-dark' class for contrasting text color -->
+
+        <h3 class="text-white">Delete account</h3>
+
+        <hr>
+    
+        <a class="btn btn-primary navbar-btn text-white" type="button" href="{% url 'delete-account' %}">Delete your account</a>
+
+    </div>
+
+
+</html>

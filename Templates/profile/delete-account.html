@@ -1,0 +1,55 @@
+
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <title> Taskly | Delete account </title>
+        <style>
+            .submit-btn {
+                background-color: rgb(47, 180, 40);
+                color: black;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+{% include 'profile/base.html' %}
+
+<br> 
+
+<div class="container text-white shadow-md p-5 form-layout"> <!-- Added 'text-dark' class for contrasting text color -->
+
+    <h3 class="text-yellow">Delete account</h3>
+
+    <hr>
+
+    <br>
+
+    <form method="POST" autocomplete="off">
+
+        {% csrf_token %}
+
+        <p> Are you sure you want to delete the account? </p>
+
+        <br> 
+
+        
+
+        <input class="btn btn-primary navbar-btn" type="submit" value="Delete account" class="submit-btn" />
+
+        <br> <br>
+
+        <a href="{% url 'profile-management' %}" style="color: black;">Go back</a>
+
+    </form>
+
+</div>
+
+<br>
+
+</html>

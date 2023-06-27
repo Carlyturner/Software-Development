@@ -1,0 +1,86 @@
+
+{% load static %}
+
+
+<html>
+    
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" contact="width-device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title> Taskly | Login </title>
+</head>
+
+{% include 'pre-base.html' %}
+
+<br>
+
+<div class="container bg text-white shadow-md p-5 form-layout"> <!-- Added 'text-dark' class for contrasting text color -->
+    
+
+    <h3> Login </h3>
+
+    
+
+    <hr>
+
+    <form method="POST" autocomplete="off">
+
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <br>
+
+        <!----input class="btn btn-primary navbar-btn" type="submit" value="Login" class="submit-btn" />---->
+
+        <button class="btn btn-primary" type="submit"> <i class="fa fa-key" aria-hidden="true"></i> &nbsp; Login</button>
+
+        <br>
+
+        <br> <br>
+
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <p class="alert alert-success float-center text-center message-text">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                {{ message }}
+            </p>
+        {% endif %}
+    {% endfor %}
+    
+
+        <br>
+
+        <br> <br>
+
+        <p>Don't have an account? <a href="{% url 'register' %}" style="color: black;"> <br> <br> Register</a></p>
+
+    </form>
+
+</div>
+
+<br>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <title> Taskly | Create task </title>
+        <style>
+            .submit-btn {
+                background-color: rgb(47, 180, 40);
+                color: rgb(255, 255, 255);
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    {% include 'profile/base.html' %}
+
+    <br>
+
+    <h3 class="text-center">Create a task</h3>
+
+    <hr>
+
+    <div class="container text-white shadow-md p-5 form-layout" style="margin-top:20px;">
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-primary navbar-btn" type="submit" value="Create task" class="submit-btn" />
+        </form>
+    </div>
+
+    <br>
+
+    {% for task in tasks %}
+        <p>{{ task.title }}</p>
+        <p>Created at: {{ task.created_at|time:"H:i:s" }}</p>
+        <!-- Other task details -->
+    {% endfor %}
+</html>
